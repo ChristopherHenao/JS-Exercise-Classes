@@ -22,7 +22,6 @@ class Airplane {
     }
   }
   
-  
   /*
   // 👇 COMPLETE YOUR WORK BELOW 👇
   // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -43,7 +42,25 @@ class Airplane {
   */
   
  class Person {
+   constructor(name, age){
+     this.name = name,
+     this.age = age,
+     this.stomach = []
+   }
+    // Class Methods
+   eat(edible){
+      if(this.stomach.length < 10){
+        return this.stomach.push(edible);
+      }
+    }
     
+    poop(){
+      return this.stomach = [];
+    }
+    
+    toString(){
+      return `${this.name}, ${this.age}`;
+    }
   }
   
   /*
