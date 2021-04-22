@@ -78,9 +78,36 @@ class Airplane {
   */
   
  class Car {
+   constructor(model, milesPerGallon){
+     this.model = model,
+     this.milesPerGallon = milesPerGallon,
+     this.tank = 0,
+     this.odometer = 0
+   }
+    //Class Methods 
+   fill(gallons){
+      return this.tank = (this.tank + gallons);
+    }
     
+    drive(distance){
+      if(this.tank > (distance/this.milesPerGallon)){
+        this.tank = this.tank - (distance/this.milesPerGallon);
+        this.odometer = this.odometer + distance;
+      }
+      else{
+        this.odometer = this.odometer + (this.tank * this.milesPerGallon);
+        this.tank = 0;
+        return `I ran out of fuel at ${this.odometer} miles!`;
+      }
+    }
   }
-  
+  // else if(this.tank <= (distance/this.milesPerGallon)){
+  //   this.tank = 0;
+  //   this.odometer = this.odometer + (this.tank * this.milesPerGallon);
+  //   return `I ran out of fuel at ${this.odometer} miles!`;
+  // }
+
+
   /*
     TASK 3
       - Write a Lambdasian class.
